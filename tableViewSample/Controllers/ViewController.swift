@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(indexPath)
         if (indexPath.row % 2 == 0) {
             if let animalCell = animalTableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath) as? AnimalTableViewCell {
+                animalCell.animalImage.layer.cornerRadius = animalCell.animalImage.bounds.width/2
                 animalCell.animalImage.image = UIImage(named: animalData[indexPath.row/2]["Name"]!)
                 animalCell.animalName.text = animalData[indexPath.row/2]["Name"]
                 return animalCell
